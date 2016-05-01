@@ -35,6 +35,6 @@
 	var marker = L.marker([13.366427, -81.384776], {icon: orangeIcon}).addTo(map);
 
 	// ADD POPUP
-	marker.bindPopup("Acá queda algo que se llama EL PULPO").openPopup();
+	marker.bindPopup('Acá queda algo que se llama EL PULPO').openPopup();
 
 }(window, document, L));
