@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<title>Banrep</title>
 	<meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="lib/styles/leaflet.css">
@@ -36,24 +36,8 @@
 	<script src="lib/scripts/leaflet.js"></script>
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
-	
-	<script src="bower_components/topojson/topojson.js"></script>
-	<script>
-		// Copyright (c) 2013 Ryan Clark, https://gist.github.com/rclark/5779673 
-		L.TopoJSON = L.GeoJSON.extend({
-			addData: function(jsonData){
-				if(jsonData.type === "Topology") {
-					for (key in jsonData.objects){
-						geojson=topojson.feature(jsonData,jsonData.objects[key]);
-						L.GeoJSON.prototype.addData.call(this, geojson);
-					}
-				}else{
-					L.GeoJSON.prototype.addData.call(this, jsonData);
-				}
-			}
-		});
-	</script>
-	<!-- endbower -->
+  <script src="bower_components/topojson/topojson.js"></script>
+  <!-- endbower -->
   <!-- endbuild -->
 	
 	<!-- build:js scripts/main.js -->
