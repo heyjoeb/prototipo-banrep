@@ -2,10 +2,8 @@
   "name": "banrep",
   "version": "0.0.0",
   "dependencies": {
-  	
-  	"topojson": "~1.5.2",
-  	
-  	"jquery": "~2.1.0"	
+    "topojson": "~1.5.2",
+    "jquery": "~2.1.0",
+    "pouchdb": "^5.3.2"
   }
 }
-
