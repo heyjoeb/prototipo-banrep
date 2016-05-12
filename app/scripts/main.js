@@ -8,14 +8,16 @@
 
 	/* create leaflet map */
 	var map = L.map('map', {
-		center: [13.378129, -81.366288],
+		center: [13.358129, -81.366288],
 		zoom: 13
 
 	});
 
 	/* add style tile layer */
-	new L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+	new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
 		maxZoom: 20,
+		tileSize: 512,
+  		zoomOffset: -1,
 		attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
@@ -36,5 +38,14 @@
 
 	// ADD POPUP
 	marker.bindPopup('Acá queda algo que se llama EL PULPO').openPopup();
+
+	// ADD SIDEBAR
+	var sidebar = $('#sidebar').sidebar();
+
+	// ADD MINIMAP
+	var osmUrl = 'https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg';
+	var osmAttrib = 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib });
+	var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map);
 
 }(window, document, L));

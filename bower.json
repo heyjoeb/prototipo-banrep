@@ -4,6 +4,8 @@
   "dependencies": {
     "topojson": "~1.5.2",
     "jquery": "~2.1.0",
-    "pouchdb": "^5.3.2"
+    "pouchdb": "^5.3.2",
+    "sidebar-v2": "^0.3.0",
+    "leaflet-minimap": "leaflet-MiniMap#^3.3.1"
   }
 }
