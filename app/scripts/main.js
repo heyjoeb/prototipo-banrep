@@ -13,7 +13,10 @@
 
 	});
 
-	/* add style tile layer */
+	// ADD CSV SETTINGS AND ROUTE
+	omnivore.csv('bower_components/leaflet-omnivore/test/a.csv').addTo(map);
+
+	// ADD STYLE LAYER
 	new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
 		maxZoom: 20,
 		useCache: true,
