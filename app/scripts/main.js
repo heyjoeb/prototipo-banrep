@@ -14,7 +14,62 @@
 	});
 
 	// ADD CSV SETTINGS AND ROUTE
-	omnivore.csv('bower_components/leaflet-omnivore/test/a.csv').addTo(map);
+	var geo_csv = L.geoCsv(null,{
+	  fieldSeparator: ',',
+	  firstLineTitles: true,
+	  onEachFeature: function (feature, layer) {
+	    layer.bindPopup(feature.properties["popup"]);
+	  },
+	  pointToLayer: function (feature, latlng) {
+	    return L.marker(latlng, {
+	      icon:L.icon({
+	        iconUrl: feature.properties['icon'],
+	        shadowUrl: 'images/shadow.png',
+	        iconSize: [35,35],
+	        shadowSize:   [35,35],
+	        shadowAnchor: [5, 25]
+	      })
+	    });
+	  }
+	});
+	$.ajax ({
+	  type:'GET',
+	  dataType:'text',
+	  url:'../datos.csv',
+	  error: function() {
+	    alert('No se pudieron cargar los datos');
+	  },
+	  success: function(csv) {
+	    geo_csv.addData(csv);
+	    map.addLayer(geo_csv);
+	    var input =  csv;
+	    var data = $.csv.toObjects(input);
+	    var html = generateList(data);
+	    $('#result3').empty();
+	    $('#result3').html(html);
+		}
+	});
+
+	
+    // build HTML list data from an array (one or two dimensional)
+    function generateList(data) {
+      var html = '';
+
+      if(typeof(data[0]) === 'undefined') {
+        return null;
+      }
+
+      if(data[0].constructor === Object) {
+        for(var row in data) {
+          for(var item in data[row]) {
+            html += '<li>' + '<a href="#" data-zoom="15" data-position="">' + data[row][item] + '</a>' + '</li>\r\n';
+          }
+        }
+      }
+      
+      return html;
+    }
+	
 
 	// ADD STYLE LAYER
 	new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
@@ -25,28 +80,6 @@
 		attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-	// ADD CUSTOM ICONS
-	var orangeIcon = L.icon({
-	    iconUrl: 'images/octopus-icon.png',
-	    shadowUrl: 'images/octopus-icon-shadow.png',
-
-	    iconSize:     [35, 35], // size of the icon
-	    shadowSize:   [35, 35], // size of the shadow
-	    iconAnchor:   [0, 17], // point of the icon which will correspond to marker's location
-	    shadowAnchor: [5, 20],  // the same for the shadow
-	    popupAnchor:  [16, -17] // point from which the popup should open relative to the iconAnchor
-	});
-
-	// ADD MARKERS
-	var marker = L.marker([13.366427, -81.384776], {icon: orangeIcon}).addTo(map);
-	var marker2 = L.marker([13.369427, -81.385776], {icon: orangeIcon}).addTo(map);
-	var marker3 = L.marker([13.352427, -81.365776], {icon: orangeIcon}).addTo(map);
-
-	// ADD POPUP
-	marker.bindPopup('Acá queda algo que se llama EL PULPO').openPopup();
-	marker2.bindPopup('Acá queda algo que se llama EL PULPO2').openPopup();
-	marker3.bindPopup('Acá queda algo que se llama EL PULPO3').openPopup();
-
 	// ADD SIDEBAR
 	var sidebar = $('#sidebar').sidebar();
 
@@ -68,3 +101,8 @@
         }
     }
 }(window, document, L));
+
+// OUTPUT CSV NAMES TO MAIN NAV
+$( document ).ready(function() {
+    
+});
