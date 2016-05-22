@@ -22,9 +22,6 @@ html {
 
 .map-application {
 	height: 100%;
-	
-	padding-top: 50px;
-	
 }
 
 
@@ -35,9 +32,19 @@ header {
 	height: 50px;
 	padding: 15px;
 	z-index: 9;
-	border-bottom: 1px solid #eee;
 	width:100%;
+	text-align: center;
+	background: transparent;
 }
-header .appName {
-	float: left;
+.sidebar {
+	box-shadow: none;
+}
+.sidebar-tabs {
+	background: transparent;
+}
+.sidebar-tabs li {
+	border-radius: 5px;
+}
+.sidebar-tabs li:hover {
+	
 }

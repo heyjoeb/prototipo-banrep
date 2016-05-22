@@ -6,7 +6,7 @@
 
 	L.Icon.Default.imagePath = 'images/';
 
-	/* create leaflet map */
+	// CREATE LEAFLET MAP
 	var map = L.map('map', {
 		center: [13.358129, -81.366288],
 		zoom: 13
@@ -24,10 +24,10 @@
 	    return L.marker(latlng, {
 	      icon:L.icon({
 	        iconUrl: feature.properties['icon'],
-	        shadowUrl: 'images/shadow.png',
-	        iconSize: [35,35],
-	        shadowSize:   [35,35],
-	        shadowAnchor: [5, 25]
+	        //shadowUrl: 'images/shadow.png',
+	        //iconSize: [35,35],
+	        //shadowSize:   [35,35],
+	        //shadowAnchor: [5, 25]
 	      })
 	    });
 	  }
@@ -45,13 +45,13 @@
 	    var input =  csv;
 	    var data = $.csv.toObjects(input);
 	    var html = generateList(data);
-	    $('#result3').empty();
-	    $('#result3').html(html);
+	    $('#csv-list').empty();
+	    $('#csv-list').html(html);
 		}
 	});
 
 	
-    // build HTML list data from an array (one or two dimensional)
+    // BUILD HTML LIST FROM CSV
     function generateList(data) {
       var html = '';
 
@@ -62,7 +62,15 @@
       if(data[0].constructor === Object) {
         for(var row in data) {
           for(var item in data[row]) {
-            html += '<li>' + '<a href="#" data-zoom="15" data-position="">' + data[row][item] + '</a>' + '</li>\r\n';
+          	if (item === 'lat') {
+		        var latitude = data[row][item];
+		    }  
+		    if (item === 'lng') {
+		        var longitude = data[row][item];
+		    }  
+          	if (item === 'name') {
+		        html += '<li>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + data[row][item] + '</a>' + '</li>\r\n';
+		    }  
           }
         }
       }
