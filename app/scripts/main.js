@@ -7,11 +7,14 @@
 	L.Icon.Default.imagePath = 'images/';
 
 	// CREATE LEAFLET MAP
+    var bounds = new L.LatLngBounds(new L.LatLng(13.398129, -81.500288), new L.LatLng(13.318129, -81.266288));
 	var map = L.map('map', {
-		center: [13.358129, -81.366288],
+		center: bounds.getCenter(),
 		zoom: 13
-
 	});
+    //var latlngs = L.rectangle(bounds).getLatLngs();
+        //L.polyline(latlngs.concat([latlngs[0]])).addTo(map);
+        map.setMaxBounds(bounds);   // Should not enter infinite recursion
 
 	// ADD CSV SETTINGS AND ROUTE
 	var geo_csv = L.geoCsv(null,{
@@ -80,13 +83,24 @@
 	
 
 	// ADD STYLE LAYER
-	new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
-		maxZoom: 20,
+	var layer = new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
+		maxZoom: 17,
+        minZoom: 11,
 		useCache: true,
 		tileSize: 512,
   		zoomOffset: -1,
 		attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
+	});
+    // Listen to cache hits and misses and spam the console
+        // The cache hits and misses are only from this layer, not from the WMS layer.
+        layer.on('tilecachehit',function(ev){
+            console.log('Cache hit: ', ev.url);
+        });
+        layer.on('tilecachemiss',function(ev){
+            console.log('Cache miss: ', ev.url);
+        });
+
+        layer.addTo(map);
 	
 	// ADD SIDEBAR
 	var sidebar = $('#sidebar').sidebar();
@@ -94,7 +108,7 @@
 	// ADD MINIMAP
 	var osmUrl = 'https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg';
 	var osmAttrib = 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib });
+	var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, useCache: true, attribution: osmAttrib });
 	var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map);
 
 	//  ADD LINK FOR MAP NAVIGATION

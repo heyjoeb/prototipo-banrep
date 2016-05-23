@@ -1,0 +1,35 @@
+CACHE MANIFEST
+# 2016-23-05
+
+NETWORK:
+*
+
+CACHE:
+index.html
+datos.csv
+styles/main.css
+scripts/main.js
+
+images/icon01.png
+images/icon02.png
+images/icon03.png
+imageslayers.png
+images/layers-2x.png
+images/marker-icon.png
+images/marker-icon-2x.png
+images/marker-shadow.png
+
+bower_components/jquery/dist/jquery.min.js
+bower_components/jquery-csv/src/jquery.csv.js
+bower_components/leaflet/dist/leaflet.js
+bower_components/leaflet/dist/leaflet.css
+bower_components/Leaflet.geoCSV/leaflet.geocsv.js
+bower_components/Leaflet.TileLayer.PouchDBCached/L.TileLayer.PouchDBCached.js
+bower_components/leaflet-minimap/dist/Control.MiniMap.min.js
+bower_components/leaflet-minimap/dist/Control.MiniMap.min.css
+bower_components/leaflet-minimap/dist/images/toggle.png
+bower_components/leaflet-minimap/dist/images/toggle.svg
+bower_components/pouchdb/dist/pouchdb.min.js
+bower_components/sidebar-v2/js/leaflet-sidebar.min.js
+bower_components/sidebar-v2/css/leaflet-sidebar.min.css
+bower_components/topojson/topojson.js
