@@ -1,5 +1,7 @@
 /*jslint browser: true*/
-/*global L */
+/*global L, $, alert */
+/*jshint -W069 */
+//jshint unused:false
 
 (function (window, document, L, undefined) {
 	'use strict';
@@ -7,28 +9,28 @@
 	L.Icon.Default.imagePath = 'images/';
 
 	// CREATE LEAFLET MAP
-    var bounds = new L.LatLngBounds(new L.LatLng(13.398129, -81.500288), new L.LatLng(13.318129, -81.266288));
+    var bounds = new L.LatLngBounds(new L.LatLng(14.658129, -82.200288), new L.LatLng(12.400129, -79.866288));
 	var map = L.map('map', {
 		center: bounds.getCenter(),
-		zoom: 13
+		zoom: 10
 	});
-    //var latlngs = L.rectangle(bounds).getLatLngs();
-        //L.polyline(latlngs.concat([latlngs[0]])).addTo(map);
+    var latlngs = L.rectangle(bounds).getLatLngs();
+        L.polyline(latlngs.concat([latlngs[0]])).addTo(map);
         map.setMaxBounds(bounds);   // Should not enter infinite recursion
 
 	// ADD CSV SETTINGS AND ROUTE
-	var geo_csv = L.geoCsv(null,{
+	var geoCsv = L.geoCsv(null,{
 	  fieldSeparator: ',',
 	  firstLineTitles: true,
 	  onEachFeature: function (feature, layer) {
-	    layer.bindPopup(feature.properties["popup"]);
+	    layer.bindPopup(feature.properties['popup']);
 	  },
 	  pointToLayer: function (feature, latlng) {
 	    return L.marker(latlng, {
 	      icon:L.icon({
 	        iconUrl: feature.properties['icon'],
 	        //shadowUrl: 'images/shadow.png',
-	        //iconSize: [35,35],
+	        iconSize: [32,32],
 	        //shadowSize:   [35,35],
 	        //shadowAnchor: [5, 25]
 	      })
@@ -43,10 +45,38 @@
 	    alert('No se pudieron cargar los datos');
 	  },
 	  success: function(csv) {
-	    geo_csv.addData(csv);
-	    map.addLayer(geo_csv);
+	    geoCsv.addData(csv);
+	    map.addLayer(geoCsv);
 	    var input =  csv;
 	    var data = $.csv.toObjects(input);
+        // BUILD HTML LIST FROM CSV
+        function generateList(data) {
+          var html = '';
+          var latitude = '';
+          var longitude = '';
+
+          if(typeof(data[0]) === 'undefined') {
+            return null;
+          }
+
+          if(data[0].constructor === Object) {
+            for(var row in data) {
+              for(var item in data[row]) {
+                if (item === 'lat') {
+                    latitude = data[row][item];
+                }  
+                if (item === 'lng') {
+                    longitude = data[row][item];
+                }  
+                if (item === 'name') {
+                    html += '<li>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + data[row][item] + '</a>' + '</li>\r\n';
+                }  
+              }
+            }
+          }
+          
+          return html;
+        }
 	    var html = generateList(data);
 	    $('#csv-list').empty();
 	    $('#csv-list').html(html);
@@ -54,38 +84,13 @@
 	});
 
 	
-    // BUILD HTML LIST FROM CSV
-    function generateList(data) {
-      var html = '';
-
-      if(typeof(data[0]) === 'undefined') {
-        return null;
-      }
-
-      if(data[0].constructor === Object) {
-        for(var row in data) {
-          for(var item in data[row]) {
-          	if (item === 'lat') {
-		        var latitude = data[row][item];
-		    }  
-		    if (item === 'lng') {
-		        var longitude = data[row][item];
-		    }  
-          	if (item === 'name') {
-		        html += '<li>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + data[row][item] + '</a>' + '</li>\r\n';
-		    }  
-          }
-        }
-      }
-      
-      return html;
-    }
+    
 	
 
 	// ADD STYLE LAYER
 	var layer = new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
-		maxZoom: 17,
-        minZoom: 11,
+		maxZoom: 16,
+        minZoom: 10,
 		useCache: true,
 		tileSize: 512,
   		zoomOffset: -1,
@@ -121,7 +126,7 @@
             map.setView(locat, zoo, {animation: true});
             return false;
         }
-    }
+    };
 }(window, document, L));
 
 // OUTPUT CSV NAMES TO MAIN NAV
