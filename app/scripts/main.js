@@ -54,6 +54,7 @@
           var html = '';
           var latitude = '';
           var longitude = '';
+          var name = '';
 
           if(typeof(data[0]) === 'undefined') {
             return null;
@@ -69,17 +70,29 @@
                     longitude = data[row][item];
                 }  
                 if (item === 'name') {
-                    html += '<li>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + data[row][item] + '</a>' + '</li>\r\n';
+                    name = data[row][item];
+                    var slug = function(name)
+                    {
+                        return name
+                        .replace(/[^a-z0-9-]/gi, '-')
+                        .replace(/-+/g, '-')
+                        .replace(/^-|-$/g, '')
+                        .toLowerCase();
+                    }
+                    var theId = slug(name);
+                    html += '<li ' + 'id=' + theId + '>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + name + '</a>' + '</li>\r\n';
                 }  
               }
             }
           }
-          
           return html;
         }
 	    var html = generateList(data);
 	    $('#csv-list').empty();
 	    $('#csv-list').html(html);
+        $('#csv-list li').each(function(){
+            $(this).addClass('item-list');
+        });
 		}
 	});
 
