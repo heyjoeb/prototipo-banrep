@@ -48,3 +48,28 @@ header {
 .sidebar-tabs li:hover {
 	
 }
+.csv-list {
+	list-style-type: none;
+	font-family: 'Walter Turncoat', cursive;
+}
+.csv-list  li {
+	padding: 5px 0;
+}
+.csv-list a {
+	text-decoration: none;
+	color: #363636;
+}
+.csv-list a:hover {
+	color: #347187;
+}
+#isla-de-providencia {
+	font-size: 24px;
+}
+#san-andr-s-and-providencia {
+	font-size: 24px;
+}
+.leaflet-popup-content {
+	font-family: 'Walter Turncoat', cursive;
+	font-size: 14px;
+	color: #363636;
+}
