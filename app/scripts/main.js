@@ -11,19 +11,29 @@
 	// CREATE LEAFLET MAP
     var bounds = new L.LatLngBounds(new L.LatLng(14.658129, -82.200288), new L.LatLng(12.400129, -79.866288));
 	var map = L.map('map', {
-		center: bounds.getCenter(),
-		zoom: 10
+		center: new L.LatLng(12.55673, -81.71852),
+		zoom: 14
 	});
     var latlngs = L.rectangle(bounds).getLatLngs();
         L.polyline(latlngs.concat([latlngs[0]])).addTo(map);
         map.setMaxBounds(bounds);   // Should not enter infinite recursion
-
+    
 	// ADD CSV SETTINGS AND ROUTE
 	var geoCsv = L.geoCsv(null,{
 	  fieldSeparator: ',',
 	  firstLineTitles: true,
 	  onEachFeature: function (feature, layer) {
 	    layer.bindPopup(feature.properties['popup']);
+        // create popup contents
+        //var customPopup = '<h1>' + feature.properties['popup'] + '</h1>' + '<p>' + feature.properties['text'] + '</p>';
+        
+        // specify popup options 
+        //var customOptions =
+           // {
+           // 'maxWidth': '320',
+           // 'className' : 'custom'
+            //}
+        //layer.bindPopup(customPopup,customOptions);
 	  },
 	  pointToLayer: function (feature, latlng) {
 	    return L.marker(latlng, {
@@ -103,7 +113,7 @@
 	// ADD STYLE LAYER
 	var layer = new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
 		maxZoom: 16,
-        minZoom: 10,
+        minZoom: 14,
 		useCache: true,
 		tileSize: 512,
   		zoomOffset: -1,
