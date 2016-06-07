@@ -23,17 +23,17 @@
 	  fieldSeparator: ',',
 	  firstLineTitles: true,
 	  onEachFeature: function (feature, layer) {
-	    layer.bindPopup(feature.properties['popup']);
+	    //layer.bindPopup(feature.properties['popup']);
         // create popup contents
-        //var customPopup = '<h1>' + feature.properties['popup'] + '</h1>' + '<p>' + feature.properties['text'] + '</p>';
+        var customPopup = '<h1>' + feature.properties['popup'] + '</h1>' + '<img src=' + feature.properties['image'] + '>' + '<p>' + feature.properties['text'] + '</p>';
         
         // specify popup options 
-        //var customOptions =
-           // {
-           // 'maxWidth': '320',
-           // 'className' : 'custom'
-            //}
-        //layer.bindPopup(customPopup,customOptions);
+        var customOptions =
+           {
+           'maxWidth': '280',
+           'className' : 'custom'
+        }
+        layer.bindPopup(customPopup,customOptions);
 	  },
 	  pointToLayer: function (feature, latlng) {
 	    return L.marker(latlng, {
