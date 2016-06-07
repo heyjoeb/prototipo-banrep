@@ -112,7 +112,7 @@
 
 	// ADD STYLE LAYER
 	var layer = new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
-		maxZoom: 16,
+		maxZoom: 15,
         minZoom: 14,
 		useCache: true,
 		tileSize: 512,
@@ -129,6 +129,22 @@
         });
 
         layer.addTo(map);
+
+    // Seed the base layer , according to the bounds variable set before and with zoom levels 14 through 15.
+        $("#seed").click(function seed() {
+            layer.seed( bounds, 14, 15 );
+        });
+
+
+
+        // Display seed progress on console
+        layer.on('seedprogress', function(seedData){
+            var percent = 100 - Math.floor(seedData.remainingLength / seedData.queueLength * 100);
+            console.log('Seeding ' + percent + '% done');
+        });
+        layer.on('seedend', function(seedData){
+            console.log('Cache seeding complete');
+        });
 	
 	// ADD SIDEBAR
 	var sidebar = $('#sidebar').sidebar();

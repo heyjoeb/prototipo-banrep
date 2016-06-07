@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html manifest="offline.appcache"> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
 	<title>Banrep</title>
@@ -59,6 +59,7 @@
 	        </div>
     	</div>
 		<div id="map" class="map sidebar-map"></div>
+		<a href="javascript:;" id="seed">seed</a>
 	</div>
 	<!-- build:js scripts/vendor.js -->
 	<script src="lib/scripts/leaflet.js"></script>

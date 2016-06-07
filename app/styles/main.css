@@ -73,3 +73,9 @@ header {
 	font-size: 14px;
 	color: #363636;
 }
+#seed {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
