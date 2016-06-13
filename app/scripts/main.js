@@ -117,8 +117,7 @@
         minZoom: 14,
 		useCache: true,
 		tileSize: 512,
-  		zoomOffset: -1,
-		attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  		zoomOffset: -1
 	});
     // Listen to cache hits and misses and spam the console
         // The cache hits and misses are only from this layer, not from the WMS layer.

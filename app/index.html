@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html manifest="offline.appcache"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
 	<title>Banrep</title>
@@ -58,6 +58,7 @@
 	            </div>
 	        </div>
     	</div>
+    	<div id="go-offline"></div>
 		<div id="map" class="map sidebar-map"></div>
 		<a href="javascript:;" id="seed">seed</a>
 	</div>
@@ -78,5 +79,7 @@
 	<!-- build:js scripts/main.js -->
 	<script src="scripts/main.js"></script>
 	<!-- endbuild -->
+	<script src="index.js"></script>
+	<script src="service-worker.js"></script>
 </body>
 </html>
