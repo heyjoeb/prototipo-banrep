@@ -20,8 +20,8 @@
     
 	// ADD CSV SETTINGS AND ROUTE
 	var geoCsv = L.geoCsv(null,{
-	  fieldSeparator: ',',
-	  firstLineTitles: true,
+      fieldSeparator: ';',
+      firstLineTitles: true,
 	  onEachFeature: function (feature, layer) {
 	    //layer.bindPopup(feature.properties['popup']);
         // create popup contents
@@ -58,7 +58,8 @@
 	    geoCsv.addData(csv);
 	    map.addLayer(geoCsv);
 	    var input =  csv;
-	    var data = $.csv.toObjects(input);
+        var options={"separator" : ";"};
+	    var data = $.csv.toObjects(input, options);
         // BUILD HTML LIST FROM CSV
         function generateList(data) {
           var html = '';
