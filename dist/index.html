@@ -49,14 +49,17 @@
 	            </div>
 	        </div>
     	</div>
-    	<div id="go-offline"></div>
+    	<div data-remodal-id="modal">
+		  <button data-remodal-action="close" class="remodal-close"></button>
+		  <h4>Navegue (estando online) por todos los puntos de interés que quiera guardar para una posterior navegación offline. Recuerde que es necesario utilizar chrome o firefox para un correcto funcionamiento.</h4>
+		</div>
+
 		<div id="map" class="map sidebar-map"></div>
 		<a href="javascript:;" id="seed">seed</a>
 	</div>
 	<script src="scripts/vendor.js"></script>
 	
 	<script src="scripts/main.js"></script>
-	<script src="index.js"></script>
 	<script src="service-worker.js"></script>
 </body>
 </html>
