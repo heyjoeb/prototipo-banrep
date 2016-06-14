@@ -8,14 +8,14 @@ if ('serviceWorker' in navigator) {
 }
 else {
   console.log('Service worker not supported');
-};
+}
 
 // Since we only want to store a simple boolean in this example opt-in to keep things simple we’ll just use localStorage to store this state:
 var optedIn = false;
 window.onload = function() {
  
 if('serviceWorker' in navigator) {
-  document.getElementById('go-offline').innerHTML = '<h4>Para utilizar el mapa en modo offline dele clic a activar y navegue por los puntos de interés que quiera guardar. Recuerde que es necesario utilizar chrome o firefox para un correcto funcionamiento:</h4><input type="checkbox" name="go-offline" id="go-offline-status" value="false" /><label for="go-offline-status">Activar</label><div id="off-line-msg"></div>';
+  document.getElementById('go-offline').innerHTML = '<h4>Acceso offline:</h4><input type="checkbox" name="go-offline" id="go-offline-status" value="false" /><label for="go-offline-status">Activar</label><div id="off-line-msg"></div>';
  
   checkOptedIn();
  
@@ -39,7 +39,7 @@ function checkOptedIn() {
     return;
   }
   else console.log('not opted in');
-};
+}
 
 // To allow a user to opt-in to offline, we’ll provide a checkbox which, when checked, will post a message to the service worker to make the most recent content available offline:
 function optInOut() {
@@ -53,4 +53,4 @@ function optInOut() {
     localStorage.removeItem('offlineoptin');
     navigator.serviceWorker.controller.postMessage({'command': 'offline-opt-out'});
   }
-};
+}

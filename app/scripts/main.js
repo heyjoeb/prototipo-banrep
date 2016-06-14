@@ -32,7 +32,7 @@
            {
            'maxWidth': '280',
            'className' : 'custom'
-        }
+        };
         layer.bindPopup(customPopup,customOptions);
 	  },
 	  pointToLayer: function (feature, latlng) {
@@ -58,7 +58,7 @@
 	    geoCsv.addData(csv);
 	    map.addLayer(geoCsv);
 	    var input =  csv;
-        var options={"separator" : ";"};
+        var options={'separator' : ';'};
 	    var data = $.csv.toObjects(input, options);
         // BUILD HTML LIST FROM CSV
         function generateList(data) {
@@ -89,7 +89,7 @@
                         .replace(/-+/g, '-')
                         .replace(/^-|-$/g, '')
                         .toLowerCase();
-                    }
+                    };
                     var theId = slug(name);
                     html += '<li ' + 'id=' + theId + '>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + name + '</a>' + '</li>\r\n';
                 }  
@@ -131,7 +131,7 @@
         layer.addTo(map);
 
     // Seed the base layer , according to the bounds variable set before and with zoom levels 14 through 15.
-        $("#seed").click(function seed() {
+        $('#seed').click(function seed() {
             layer.seed( bounds, 14, 15 );
         });
 
@@ -168,7 +168,13 @@
     };
 }(window, document, L));
 
-// OUTPUT CSV NAMES TO MAIN NAV
+// REMODAL
 $( document ).ready(function() {
-    
+    var inst = $('[data-remodal-id=modal]').remodal();
+
+/**
+ * Opens the modal window
+ */
+inst.open();
+
 });
