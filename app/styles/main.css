@@ -72,6 +72,8 @@ header {
 	font-family: 'Walter Turncoat', cursive;
 	font-size: 14px;
 	color: #363636;
+	max-height: 320px;
+	overflow-y: scroll;
 }
 #seed {
 	display: none;
