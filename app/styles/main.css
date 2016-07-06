@@ -50,26 +50,48 @@ header {
 }
 .csv-list {
 	list-style-type: none;
-	font-family: 'Walter Turncoat', cursive;
+	font-family: 'Open Sans', sans-serif;
 }
 .csv-list  li {
 	padding: 5px 0;
 }
 .csv-list a {
 	text-decoration: none;
-	color: #363636;
+	color: #191919;
+	font-size: 0.9em;
 }
 .csv-list a:hover {
 	color: #347187;
 }
-#isla-de-providencia {
+#providencia-y-santa-catalina {
 	font-size: 24px;
+	font-weight: 700;
+	background: #e95c51;
+	padding: 5px 15px;
+	margin-bottom: 15px;
+}
+#providencia-y-santa-catalina a {
+	color: #fff;
+}
+#providencia-y-santa-catalina a:hover {
+	color: #9d3831;
 }
 #san-andr-s-and-providencia {
 	font-size: 24px;
+	font-weight: 700;
+	background: #e95c51;
+	padding: 5px 15px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+#san-andr-s-and-providencia a {
+	color: #fff;
+}
+#san-andr-s-and-providencia a:hover {
+	color: #9d3831;
 }
 .leaflet-popup-content {
-	font-family: 'Walter Turncoat', cursive;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #363636;
 	max-height: 320px;
@@ -83,4 +105,64 @@ header {
 }
 .offline-info {
 	text-align: center;
+}
+.sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
+	background: #e95c51;
+}
+.sidebar-pane {
+	padding: 0;
+	padding: 20px;
+	height: 300px;
+}
+.sidebar-content {
+	overflow: hidden;
+	height: 300px;
+	border-radius: 5px;
+}
+.faqs-content {
+	color: #191919;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9em;
+}
+.faqs-content h1 {
+	font-weight: 700;
+	font-size: 1.5em;
+	color: #e95c51;
+	border-bottom: solid 3px #e95c51;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+}
+.faqs-content h2 {
+	font-weight: 400;
+	font-size: 1.3em;
+	margin-bottom: 15px;
+	margin-top: 30px;
+}
+.faqs-content p {
+	font-family: 'PT Serif', serif;
+	font-size: 0.85em;
+	color: #444444;
+	margin-bottom: 15px;
+	line-height: 1.7em;
+}
+._mCS_2 {
+	background: #fff;
+}
+.main-title h2 {
+	margin-top: 0;
+}
+.leaflet-popup-content h1 {
+	font-size: 1.3em;
+	color: #e95c51;
+	margin-bottom: 15px;
+}
+.leaflet-popup-content p {
+	font-family: 'PT Serif', serif;
+	font-size: 0.85em;
+	color: #444444;
+	margin-bottom: 15px;
+	line-height: 1.7em;
+}
+.item-list .current {
+	color: #9c9c9c;
 }

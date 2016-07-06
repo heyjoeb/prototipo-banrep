@@ -9,6 +9,7 @@
     "leaflet-minimap": "leaflet-MiniMap#^3.3.1",
     "Leaflet.TileLayer.PouchDBCached": "^0.1.0",
     "jquery-csv": "^0.8.1",
-    "remodal": "^1.0.7"
+    "remodal": "^1.0.7",
+    "malihu-custom-scrollbar-plugin": "^3.1.4"
   }
 }

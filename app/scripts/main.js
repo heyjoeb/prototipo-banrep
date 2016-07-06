@@ -14,6 +14,7 @@
 		center: new L.LatLng(12.55673, -81.71852),
 		zoom: 14
 	});
+
     var latlngs = L.rectangle(bounds).getLatLngs();
         L.polyline(latlngs.concat([latlngs[0]])).addTo(map);
         map.setMaxBounds(bounds);   // Should not enter infinite recursion
@@ -25,7 +26,7 @@
 	  onEachFeature: function (feature, layer) {
 	    //layer.bindPopup(feature.properties['popup']);
         // create popup contents
-        var customPopup = '<h1>' + feature.properties['popup'] + '</h1>' + '<img src=' + feature.properties['image'] + '>' + '<p>' + feature.properties['text'] + '</p>';
+        var customPopup = '<h1>' + feature.properties['popup'] + '</h1>' + '<img src=' + feature.properties['image'] + '>' + '<p>' + feature.properties['text'] + '</p>' + '<p>' + feature.properties['text2'] + '</p>' + '<p>' + feature.properties['text3'] + '</p>' + '<p>' + feature.properties['text4'] + '</p>';
         
         // specify popup options 
         var customOptions =
@@ -177,6 +178,7 @@ $( document ).ready(function() {
  */
 inst.open();
 
+
 });
 
 (function() {
@@ -194,3 +196,14 @@ inst.open();
   }
 
 })();
+$(window).load(function() {
+  // CUSTOM SCROLL
+  $('.sidebar-pane').mCustomScrollbar({
+    theme: 'rounded-dark'
+  });
+  //ADD .CURRENT CLASS TO LINK IN LIST
+   $('#csv-list li a').on('click', function(){
+      $('li a.current').removeClass('current');
+      $(this).addClass('current');
+  });
+})
