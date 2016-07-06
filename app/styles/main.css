@@ -76,7 +76,7 @@ header {
 #providencia-y-santa-catalina a:hover {
 	color: #9d3831;
 }
-#san-andr-s-and-providencia {
+#san-andr-s {
 	font-size: 24px;
 	font-weight: 700;
 	background: #e95c51;
@@ -84,10 +84,10 @@ header {
 	margin-top: 25px;
 	margin-bottom: 15px;
 }
-#san-andr-s-and-providencia a {
+#san-andr-s a {
 	color: #fff;
 }
-#san-andr-s-and-providencia a:hover {
+#san-andr-s a:hover {
 	color: #9d3831;
 }
 .leaflet-popup-content {
