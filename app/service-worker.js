@@ -120,7 +120,9 @@ var offlineFundamentals = [
   'images/40.jpg',
   'images/41.jpg',
   'images/42.jpg',
-  'images/43.jpg'
+  'images/43.jpg',
+  'images/intro.png',
+  'images/green-patch01.png'
 ];
 
 /* The install event fires when the service worker is first installed.

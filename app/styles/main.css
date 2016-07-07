@@ -118,6 +118,7 @@ header {
 	overflow: hidden;
 	height: 300px;
 	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.65);
 }
 .faqs-content {
 	color: #191919;
@@ -165,4 +166,18 @@ header {
 }
 .item-list .current {
 	color: #9c9c9c;
+}
+.leaflet-control-attribution  {
+	display: none;
+}
+.remodal {
+	max-width: 400px;
+}
+.remodal .img-container {
+	max-width: 100%;
+}
+.remodal h4 {
+	font-size: 0.80em;
+	color: #606060;
+	font-weight: 400;
 }
