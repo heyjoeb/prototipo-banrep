@@ -108,9 +108,44 @@
 		}
 	});
 
-	
-    
-	
+	// ADD DECO
+  var image01 = 'images/img03.png',
+    imageBounds01 = [[13.373587513919782, -81.34616374969482], [13.398804155297157, -81.39500141143799]];
+  L.imageOverlay(image01, imageBounds01).addTo(map);
+
+  var image02 = 'images/img04.png',
+    imageBounds02 = [[13.35838945541145, -81.34397506713867], [13.378848157085185, -81.39942169189453]];
+  L.imageOverlay(image02, imageBounds02).addTo(map);
+
+  var image03 = 'images/img05.png',
+    imageBounds03 = [[13.336049912268548, -81.34320259094238], [13.359642078865688, -81.39890670776367]];
+  L.imageOverlay(image03, imageBounds03).addTo(map);
+
+  var image04 = 'images/img06.png',
+    imageBounds04 = [[13.314292970650442, -81.35303020477295], [13.336885072551336, -81.40397071838379]];
+  L.imageOverlay(image04, imageBounds04).addTo(map);
+
+  var image05 = 'images/img07.png',
+    imageBounds05 = [[12.576177454888787, -81.67845726013184], [12.601642692585052, -81.73154354095459]];
+  L.imageOverlay(image05, imageBounds05).addTo(map);
+
+  var image06 = 'images/img08.png',
+    imageBounds06 = [[12.55163126686446, -81.68854236602783], [12.5773502516034, -81.74557685852051]];
+  L.imageOverlay(image06, imageBounds06).addTo(map);
+
+  var image07 = 'images/img09.png',
+    imageBounds07 = [[12.528046290290643, -81.69098854064941], [12.553851410960164, -81.7478084564209]];
+  L.imageOverlay(image07, imageBounds07).addTo(map);
+
+  var image08 = 'images/img10.png',
+    imageBounds08 = [[12.50429156675055, -81.69373512268066], [12.52997338535129, -81.7487096786499]];
+  L.imageOverlay(image08, imageBounds08).addTo(map);
+
+  var image09 = 'images/img11.png',
+    imageBounds09 = [[12.479948040920366, -81.69845581054688], [12.50538089642164, -81.75141334533691]];
+  L.imageOverlay(image09, imageBounds09).addTo(map);
+
+
 
 	// ADD STYLE LAYER
 	var layer = new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
@@ -147,7 +182,9 @@
             console.log('Cache seeding complete');
         });
 
+  // REVEAL LAT AND LNG ON CLICK
 
+   //map.on('click', function(e) { alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng) })
 
 
 
@@ -211,4 +248,4 @@ $(window).load(function() {
       $('li a.current').removeClass('current');
       $(this).addClass('current');
   });
-})
+});
