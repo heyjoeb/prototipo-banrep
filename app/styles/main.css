@@ -469,7 +469,7 @@ header {
 	width: 120px;
 	float: left;
 }
-#slide-ubicacion {
+#slider-ubicacion {
 	float: left;
 	width: 20px;
 	height: 120px;
@@ -478,7 +478,7 @@ header {
 	color: #fff;
 	text-align: center;
 }
-#slide-ubicacion:hover {
+#slider-ubicacion:hover {
 	background: #9d3831;
 }
 .ubicacion.visible {
@@ -486,4 +486,132 @@ header {
 }
 .ubicacion.hidden {
 	right: -120px;
+}
+
+
+.tipologia {
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	width: 600px;
+	height: 150px;
+	z-index: 1;
+	overflow: hidden;
+	background: #fff;
+}
+.tipologia h2 {
+	color: #e95c51;
+}
+.tipologia img {
+	width: 100%;
+}
+.container-info {
+	width: 580px;
+	float: right;
+	padding: 10px 15px;
+	font-size: 0.7em;
+	color: #4e4e4e;
+	overflow: hidden;
+}
+.container-info .col-3 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.container-info .col-3 {
+	width: 33.333%;
+	float: left;
+}
+.container-info .text {
+	margin-top: 3px;
+}
+.container-info li {
+	margin: 7px 0;
+	display: block;
+	overflow: hidden;
+}
+.container-info span {
+	float: left;
+}
+.container-info .icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.icon-agua {
+	background: url('../images/icon-agua.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-historia {
+	background: url('../images/icon-historia.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-naturaleza {
+	background: url('../images/icon-naturaleza.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-actividades {
+	background: url('../images/icon-actividades.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-recreacion {
+	background: url('../images/icon-recreacion.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-historico {
+	background: url('../images/icon-historico.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-bote {
+	background: url('../images/icon-bote.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-cultura {
+	background: url('../images/icon-cultura.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-catboat {
+	background: url('../images/icon-catboat.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-humedal {
+	background: url('../images/icon-humedal.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-fair {
+	background: url('../images/icon-fair.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.icon-pozos {
+	background: url('../images/icon-pozos.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#slider-tipologia {
+	float: right;
+	width: 20px;
+	height: 150px;
+	padding-top: 65px;
+	background: #e95c51;
+	color: #fff;
+	text-align: center;
+}
+#slider-tipologia:hover {
+	background: #9d3831;
+}
+.tipologia.visible {
+	left: 0;
+}
+.tipologia.hidden {
+	left: -580px;
 }

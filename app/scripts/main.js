@@ -234,12 +234,22 @@ $( document ).ready(function() {
 inst.open();
 
   // slider ubicación
-  $('#slide-ubicacion').click(function(){
+  $('#slider-ubicacion').click(function(){
     var hidden = $('.ubicacion');
     if (hidden.hasClass('visible')){
         hidden.animate({"right":"-120px"}, "500").removeClass('visible');
     } else {
         hidden.animate({"right":"0px"}, "500").addClass('visible');
+    }
+  });
+
+  // slider tipología
+  $('#slider-tipologia').click(function(){
+    var hidden = $('.tipologia');
+    if (hidden.hasClass('visible')){
+        hidden.animate({"left":"-580px"}, "500").removeClass('visible');
+    } else {
+        hidden.animate({"left":"0px"}, "500").addClass('visible');
     }
   });
 });

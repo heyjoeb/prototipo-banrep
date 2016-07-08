@@ -88,7 +88,20 @@ var offlineFundamentals = [
   'images/img08.png',
   'images/img09.png',
   'images/img10.png',
-  'images/img11.png'
+  'images/img11.png',
+  'images/icon-historico.png',
+  'images/icon-cultura.png',
+  'images/icon-bote.png',
+  'images/icon-historia.png',
+  'images/icon-catboat.png',
+  'images/icon-pozos.png',
+  'images/icon-fair.png',
+  'images/icon-humedal.png',
+  'images/icon-historico.png',
+  'images/icon-recreacion.png',
+  'images/icon-actividades.png',
+  'images/icon-naturaleza.png',
+  'images/icon-agua.png'
 ];
 
 /* The install event fires when the service worker is first installed.
