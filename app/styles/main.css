@@ -53,7 +53,7 @@ header {
 	font-family: 'Open Sans', sans-serif;
 }
 .csv-list  li {
-	padding: 5px 0;
+	padding: 5px 0 5px 10px;
 }
 .csv-list a {
 	text-decoration: none;
@@ -69,6 +69,7 @@ header {
 	background: #e95c51;
 	padding: 5px 15px;
 	margin-bottom: 15px;
+	border: 0;
 }
 #providencia-y-santa-catalina a {
 	color: #fff;
@@ -164,8 +165,278 @@ header {
 	margin-bottom: 15px;
 	line-height: 1.7em;
 }
+.item-list {
+	border-left: solid 3px transparent;
+}
+.freshwater-bay {
+	border-color: #86BBD4;
+}
+.freshwater-dam {
+	border-color: #86BBD4;
+}
+.estadio-de-softball-de-maracaibo {
+	border-color: #C86550;
+}
+.coliseo-de-black-sand-bay {
+	border-color: #C86550;
+}
+.casa-de-la-cultura-de-santa-isabel {
+	border-color: #C86550;
+}
+.casa-l-dica {
+	border-color: #C86550;
+}
+.casa-de-la-m-sica {
+	border-color: #C86550;
+}
+.iglesia-cat-lica-central-y-convento {
+	border-color: #C86550;
+}
+.iglesia-cat-lica-de-lazy-hill {
+	border-color: #C86550;
+}
+.iglesia-cat-lica-de-rocky-point {
+	border-color: #C86550;
+}
+.iglesia-bautista-central {
+	border-color: #C86550;
+}
+.iglesia-bautista-central {
+	border-color: #C86550;
+}
+.iglesia-bautista-salt-creek {
+	border-color: #C86550;
+}
+.iglesia-bautista-de-rocky-point {
+	border-color: #C86550;
+}
+.iglesia-adventista-de-rocky-point {
+	border-color: #C86550;
+}
+.iglesia-bautista-de-bottom-house {
+	border-color: #C86550;
+}
+.iglesia-cat-lica-de-bottom-house {
+	border-color: #C86550;
+}
+.iglesia-cat-lica-de-bottom-house {
+	border-color: #C86550;
+}
+.iglesia-cat-lica-de-santa-catalina {
+	border-color: #C86550;
+}
+.carreras-de-caballo-en-southwest-bay {
+	border-color: #C86550;
+}
+.fair-table-mountain {
+	border-color: #C86550;
+}
+.fair-table-en-old-town {
+	border-color: #C86550;
+}
+.fair-table-en-lazy-hill {
+	border-color: #C86550;
+}
+.fair-table-en-southwest-bay {
+	border-color: #C86550;
+}
+.southwest-bay {
+	border-color: #C86550;
+}
+.manchneel-bay {
+	border-color: #C86550;
+}
+.old-town {
+	border-color: #8D8B8B;
+}
 .item-list .current {
 	color: #9c9c9c;
+}
+.pesca-artesanal-en-cayo-roncador {
+	border-color: #EED349;
+}
+.pesca-artesanal-en-banco-serrana {
+	border-color: #EED349;
+}
+.pesca-artesanal-en-banco-quitasue-o {
+	border-color: #EED349;
+}
+.pesca-artesanal-en-banco-serrana {
+	border-color: #EED349;
+}
+.navegaci-n-salida-de-carreras-catboats {
+	border-color: #D0D96F;
+}
+.manglar-de-santa-catalina {
+	border-color: #D0D96F;
+}
+.mc-bean-lagoon {
+	border-color: #D0D96F;
+}
+.manglar-de-southwest-bay {
+	border-color: #D0D96F;
+}
+.the-peak {
+	border-color: #D0D96F;
+}
+.constant-spring {
+	border-color: #86BBD4;
+}
+.velodia-well {
+	border-color: #86BBD4;
+}
+.simpson-well {
+	border-color: #86BBD4;
+}
+.lynval-well {
+	border-color: #86BBD4;
+}
+.jack-pond {
+	border-color: #86BBD4;
+}
+.big-pond {
+	border-color: #86BBD4;
+}
+.miss-kenny-pond {
+	border-color: #86BBD4;
+}
+.little-pond {
+	border-color: #86BBD4;
+}
+.manuel-pond {
+	border-color: #86BBD4;
+}
+.casa-tradicional-con-cisterna {
+	border-color: #86BBD4;
+}
+.estadio-de-baseball {
+	border-color: #C86550;
+}
+.softball-en-sound-bay {
+	border-color: #C86550;
+}
+.ballfield-en-brooks-hill {
+	border-color: #C86550;
+}
+.coliseo-de-ginnie-bay {
+	border-color: #C86550;
+}
+.tamarind-tree-cultural-center {
+	border-color: #C86550;
+}
+.the-ranch {
+	border-color: #C86550;
+}
+.casa-de-la-cultura {
+	border-color: #C86550;
+}
+.primera-iglesia-bautista {
+	border-color: #C86550;
+}
+.iglesia-bautista-christian-mission {
+	border-color: #C86550;
+}
+.catedral-de-la-sagrada-familia {
+	border-color: #C86550;
+}
+.iglesia-cat-lica-de-san-luis {
+	border-color: #C86550;
+}
+.iglesia-adventista-de-la-loma {
+	border-color: #C86550;
+}
+.iglesia-adventista-de-san-luis {
+	border-color: #C86550;
+}
+.iglesia-adventista-del-s-ptimo-d-a {
+	border-color: #C86550;
+}
+.mezquita {
+	border-color: #C86550;
+}
+.carreras-de-caballo-en-el-horse-track {
+	border-color: #C86550;
+}
+.caballos-en-sound-bay {
+	border-color: #C86550;
+}
+.pelea-de-gallos-en-san-luis {
+	border-color: #C86550;
+}
+.fair-table-en-perry-hill {
+	border-color: #C86550;
+}
+.fair-table-en-orange-hill {
+	border-color: #C86550;
+}
+.fair-table-en-barrack {
+	border-color: #C86550;
+}
+.fair-table-en-schooner-bight {
+	border-color: #C86550;
+}
+.domin-en-primera-iglesia-bautista {
+	border-color: #C86550;
+}
+.domin-cerca-a-fisherman-s-place-en-sarie-bay {
+	border-color: #C86550;
+}
+.spratt-bight {
+	border-color: #C86550;
+}
+.sound-bay {
+	border-color: #C86550;
+}
+.slave-hill {
+	border-color: #8D8B8B;
+}
+.battle-alley {
+	border-color: #8D8B8B;
+}
+.orange-hill {
+	border-color: #8D8B8B;
+}
+.barrack {
+	border-color: #8D8B8B;
+}
+.duppy-gully {
+	border-color: #8D8B8B;
+}
+.schooner-bight {
+	border-color: #8D8B8B;
+}
+.molienda-de-ca-a {
+	border-color: #EED349;
+}
+.pesca-artesanal-en-cayo-bol-var {
+	border-color: #EED349;
+}
+.pesca-artesanal-en-cayo-alburbeque {
+	border-color: #EED349;
+}
+.sitio-de-navegaci-n-schooner-bight {
+	border-color: #EED349;
+}
+.humedal-en-el-centro {
+	border-color: #D0D96F;
+}
+.humedal-en-san-luis {
+	border-color: #D0D96F;
+}
+.cueva-de-morgan {
+	border-color: #D0D96F;
+}
+.morris-landing-cave {
+	border-color: #D0D96F;
+}
+.the-cliff {
+	border-color: #D0D96F;
+}
+.cocoplum-bay-rocky-cay {
+	border-color: #D0D96F;
+}
+.hooker-bay {
+	border-color: #D0D96F;
 }
 .leaflet-control-attribution  {
 	display: none;

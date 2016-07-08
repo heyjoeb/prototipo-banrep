@@ -67,6 +67,7 @@
           var latitude = '';
           var longitude = '';
           var name = '';
+          var popup = '';
 
           if(typeof(data[0]) === 'undefined') {
             return null;
@@ -81,6 +82,18 @@
                 if (item === 'lng') {
                     longitude = data[row][item];
                 }  
+                if (item === 'popup') {
+                    popup = data[row][item];
+                    var slug2 = function(popup)
+                    {
+                        return popup
+                        .replace(/[^a-z0-9-]/gi, '-')
+                        .replace(/-+/g, '-')
+                        .replace(/^-|-$/g, '')
+                        .toLowerCase();
+                    };
+                    var theClass = slug2(popup);
+                } 
                 if (item === 'name') {
                     name = data[row][item];
                     var slug = function(name)
@@ -92,7 +105,7 @@
                         .toLowerCase();
                     };
                     var theId = slug(name);
-                    html += '<li ' + 'id=' + theId + '>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + name + '</a>' + '</li>\r\n';
+                    html += '<li ' + 'id=' + theId + ' ' + 'class=' + theClass + '>' + '<a href="#"' + 'data-zoom="15"' + 'data-position=' + latitude + ',' + longitude + '>' + name + '</a>' + '</li>\r\n';
                 }  
               }
             }
