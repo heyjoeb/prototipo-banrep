@@ -78,6 +78,7 @@ var offlineFundamentals = [
   'images/marker-icon.png',
   'images/marker-icon-2x.png',
   'images/hoyoSoplador.jpg',
+  'images/ubicacion.png',
   'images/intro.png',
   'images/img03.png',
   'images/img04.png',

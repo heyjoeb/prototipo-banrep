@@ -14,6 +14,7 @@ body,
 html {
 	font-family: Arial, sans-serif;
 	height: 100%;
+	overflow: hidden;
 }
 .map {
 	width: 100%;
@@ -451,4 +452,38 @@ header {
 	font-size: 0.80em;
 	color: #606060;
 	font-weight: 400;
+}
+.ubicacion {
+	position: absolute;
+	right: 0;
+	bottom: 1px;
+	width: 140px;
+	height: 120px;
+	z-index: 1;
+	overflow: hidden;
+}
+.ubicacion img {
+	width: 100%;
+}
+.container-img {
+	width: 120px;
+	float: left;
+}
+#slide-ubicacion {
+	float: left;
+	width: 20px;
+	height: 120px;
+	padding-top: 55px;
+	background: #e95c51;
+	color: #fff;
+	text-align: center;
+}
+#slide-ubicacion:hover {
+	background: #9d3831;
+}
+.ubicacion.visible {
+	right: 0;
+}
+.ubicacion.hidden {
+	right: -120px;
 }

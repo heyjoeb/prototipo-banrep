@@ -233,7 +233,15 @@ $( document ).ready(function() {
  */
 inst.open();
 
-
+  // slider ubicación
+  $('#slide-ubicacion').click(function(){
+    var hidden = $('.ubicacion');
+    if (hidden.hasClass('visible')){
+        hidden.animate({"right":"-120px"}, "500").removeClass('visible');
+    } else {
+        hidden.animate({"right":"0px"}, "500").addClass('visible');
+    }
+  });
 });
 
 (function() {
