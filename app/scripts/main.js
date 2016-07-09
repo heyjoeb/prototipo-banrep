@@ -41,7 +41,7 @@
 	      icon:L.icon({
 	        iconUrl: feature.properties['icon'],
 	        //shadowUrl: 'images/shadow.png',
-	        iconSize: [32,32],
+	        iconSize: [26,26],
 	        //shadowSize:   [35,35],
 	        //shadowAnchor: [5, 25]
 	      })
