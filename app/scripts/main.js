@@ -161,12 +161,12 @@
 
 
 	// ADD STYLE LAYER
-	var layer = new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
+	var layer = new L.tileLayer('https://api.mapbox.com/styles/v1/heyjoeb/cio4kq5k6004xafm06nm1pg4g/tiles/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaGV5am9lYiIsImEiOiJjaW5vemYzeGgxMDUwdHZseXVicXZwbTAzIn0.7GJ_d9Xk-m50NUgRsOcnXg', {
 		maxZoom: 15,
-        minZoom: 14,
+    minZoom: 14,
 		useCache: true,
 		tileSize: 512,
-  		zoomOffset: -1
+  	zoomOffset: -1
 	});
     // Listen to cache hits and misses and spam the console
         // The cache hits and misses are only from this layer, not from the WMS layer.
