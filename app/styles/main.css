@@ -445,6 +445,9 @@ header {
 .remodal {
 	max-width: 400px;
 }
+.remodal img {
+	max-width: 100%;
+}
 .remodal .img-container {
 	max-width: 100%;
 }
@@ -614,4 +617,50 @@ header {
 }
 .tipologia.hidden {
 	left: -580px;
+}
+.leaflet-bar a, .leaflet-bar a:hover {
+	box-shadow: none;
+	background: #e95c51;
+	color: #fff;
+	border: 0;
+	height: 40px;
+	line-height: 40px;
+	width: 40px;
+}
+.leaflet-bar {
+	border-radius: 0;
+	box-shadow: none;
+}
+.leaflet-bar a:first-child {
+	border-radius: 0;
+}
+.leaflet-bar a:last-child {
+	border-radius: 0;
+}
+.sidebar-left {
+	left: 0;
+	border-radius: 0;
+	top: 0;
+	z-index: 1;
+}
+.sidebar-tabs > li, .sidebar-tabs > ul > li {
+	color: #fff;
+	background: #e95c51;
+	border-radius: 0;
+}
+.sidebar-tabs li a:hover {
+	background: #9D3831;
+	color: #fff;
+}
+.leaflet-top .leaflet-control {
+	margin: 0;
+}
+.leaflet-bar a.leaflet-disabled {
+	background: #e95c51;
+	color: #fff;
+	opacity: 0.5;
+}
+.leaflet-bar a:hover {
+	background: #9D3831;
+	color: #fff;
 }

@@ -12,13 +12,19 @@
     var bounds = new L.LatLngBounds(new L.LatLng(14.658129, -82.200288), new L.LatLng(12.400129, -79.866288));
 	var map = L.map('map', {
 		center: new L.LatLng(12.55673, -81.71852),
-		zoom: 14
+		zoom: 14,
+    zoomControl: false
 	});
 
     var latlngs = L.rectangle(bounds).getLatLngs();
         L.polyline(latlngs.concat([latlngs[0]])).addTo(map);
         map.setMaxBounds(bounds);   // Should not enter infinite recursion
-    
+
+  //add zoom control with your options
+  L.control.zoom({
+       position:'topright'
+  }).addTo(map);
+
 	// ADD CSV SETTINGS AND ROUTE
 	var geoCsv = L.geoCsv(null,{
       fieldSeparator: ';',
@@ -197,7 +203,7 @@
 
   // REVEAL LAT AND LNG ON CLICK
 
-   map.on('click', function(e) { alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng) })
+   // map.on('click', function(e) { alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng) })
 
 
 
