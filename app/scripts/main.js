@@ -253,7 +253,7 @@ inst.open();
   $('#slider-tipologia').click(function(){
     var hidden = $('.tipologia');
     if (hidden.hasClass('visible')){
-        hidden.animate({"left":"-580px"}, "500").removeClass('visible');
+        hidden.animate({"left":"-560px"}, "500").removeClass('visible');
     } else {
         hidden.animate({"left":"0px"}, "500").addClass('visible');
     }

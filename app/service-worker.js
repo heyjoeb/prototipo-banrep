@@ -135,7 +135,8 @@ var offlineFundamentals = [
   'images/icon-hoyo-soplador.png',
   'images/icon-jardin-botanico-nacional.png',
   'images/icon-la-piscinita.png',
-  'images/icon-centro-cultural-banco.png'
+  'images/icon-centro-cultural-banco.png',
+  'images/no-marker.png'
 ];
 
 /* The install event fires when the service worker is first installed.

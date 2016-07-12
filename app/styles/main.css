@@ -12,7 +12,7 @@
 }
 body,
 html {
-	font-family: Arial, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	height: 100%;
 	overflow: hidden;
 }
@@ -41,7 +41,7 @@ header {
 	box-shadow: none;
 }
 .sidebar-tabs {
-	background: transparent;
+	background: #e95c51;
 }
 .sidebar-tabs li {
 	border-radius: 5px;
@@ -53,43 +53,49 @@ header {
 	list-style-type: none;
 	font-family: 'Open Sans', sans-serif;
 }
-.csv-list  li {
-	padding: 5px 0 5px 10px;
-}
 .csv-list a {
 	text-decoration: none;
-	color: #191919;
-	font-size: 0.9em;
+	color: #4e4e4e;
+	font-size: 0.8em;
+	display: block;
+	padding: 10px 0 10px 10px;
 }
 .csv-list a:hover {
-	color: #347187;
+	color: #e95c51;
 }
-#providencia-y-santa-catalina {
+.providencia-y-santa-catalina {
 	font-size: 24px;
 	font-weight: 700;
 	background: #e95c51;
-	padding: 5px 15px;
 	margin-bottom: 15px;
 	border: 0;
 }
-#providencia-y-santa-catalina a {
+.providencia-y-santa-catalina a {
 	color: #fff;
+	padding: 5px 15px;
 }
-#providencia-y-santa-catalina a:hover {
+.item-list.providencia-y-santa-catalina .current {
+	color: #9D3831;
+}
+.providencia-y-santa-catalina a:hover {
 	color: #9d3831;
 }
-#san-andr-s {
+.san-andr-s {
 	font-size: 24px;
 	font-weight: 700;
 	background: #e95c51;
-	padding: 5px 15px;
 	margin-top: 25px;
 	margin-bottom: 15px;
+	border: 0;
 }
-#san-andr-s a {
+.san-andr-s a {
 	color: #fff;
+	padding: 5px 15px;
 }
-#san-andr-s a:hover {
+.item-list.san-andr-s .current {
+	color: #9D3831;
+}
+.san-andr-s a:hover {
 	color: #9d3831;
 }
 .leaflet-popup-content {
@@ -509,12 +515,12 @@ header {
 	width: 100%;
 }
 .container-info {
-	width: 580px;
-	float: right;
-	padding: 10px 15px;
-	font-size: 0.7em;
+	font-size: 0.8em;
 	color: #4e4e4e;
 	overflow: hidden;
+}
+.container-info h2 {
+	color: #e95c51;
 }
 .container-info .col-3 ul {
   list-style-type: none;
@@ -528,7 +534,7 @@ header {
 	margin-top: 3px;
 }
 .container-info li {
-	margin: 7px 0;
+	margin: 15px 0;
 	display: block;
 	overflow: hidden;
 }
@@ -602,7 +608,7 @@ header {
 }
 #slider-tipologia {
 	float: right;
-	width: 20px;
+	width: 40px;
 	height: 150px;
 	padding-top: 65px;
 	background: #e95c51;
@@ -642,6 +648,7 @@ header {
 	border-radius: 0;
 	top: 0;
 	z-index: 1;
+	height: 100%;
 }
 .sidebar-tabs > li, .sidebar-tabs > ul > li {
 	color: #fff;
@@ -663,4 +670,9 @@ header {
 .leaflet-bar a:hover {
 	background: #9D3831;
 	color: #fff;
+}
+@media screen and (max-width: 768px) {
+    .leaflet-right {
+		right: 40px;
+	}
 }
