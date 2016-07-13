@@ -172,6 +172,9 @@ header {
 	margin-bottom: 15px;
 	line-height: 1.7em;
 }
+.leaflet-popup-content img {
+	width: 100%;
+}
 .item-list {
 	border-left: solid 3px transparent;
 }
