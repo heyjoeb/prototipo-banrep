@@ -18,7 +18,6 @@ var offlineFundamentals = [
   'scripts/vendor.js',
   'fonts/fontawesome-webfont.ttf',
   'images/marker-icon.png',
-  'images/hoyoSoplador.jpg',
   'images/ubicacion.png',
   'images/intro.png',
   'images/img03.png',
